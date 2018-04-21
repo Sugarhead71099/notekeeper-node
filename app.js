@@ -6,7 +6,7 @@ const fs = require('fs'),
 
 const titleOptions = {
 	describe: 'Title of note',
-	demand: true,	
+	demand: true,
 	alias: 't',
 };
 
