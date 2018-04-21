@@ -2,7 +2,6 @@ const fs = require('fs'),
 	  os = require('os'),
 	  _ = require('lodash'),
 	  yargs = require('yargs'),
-
 	  notes = require('./notes.js');
 
 const titleOptions = {
