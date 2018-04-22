@@ -1,19 +1,23 @@
 const fs = require('fs');
 
-function fetchNotes() {
-	try {
+function fetchNotes()
+{
+	try 
+	{
 		let notesString = fs.readFileSync('notes-data.json'/*, (error) => {
 			if ( error ) {
 				console.log('Unable to read file');
 			}
 		}*/);
 		return JSON.parse(notesString);
-	} catch ( error ) {
+	} catch ( error ) 
+	{
 		return [];
 	}
 }
 
-function saveNotes(notes) {
+function saveNotes(notes)
+{
 	fs.writeFileSync('notes-data.json', JSON.stringify(notes)/*, (error) => {
 		if ( error ) {
 			return false;
@@ -37,7 +41,8 @@ let addNote = (title, body) => {
 	};
 	let duplicateNotes = notes.filter( note => note.title === title );
 
-	if ( ! duplicateNotes.length ) {
+	if ( ! duplicateNotes.length )
+	{
 		notes.push(note);
 		saveNotes(notes);
 		return note;
@@ -58,7 +63,8 @@ let getNote = (title) => {
 let removeNote = (title) => {
 	let notes = fetchNotes();
 	let newNotes = notes.filter( note => note.title !== title );
-	if ( notes.length === newNotes.length ) {
+	if ( notes.length === newNotes.length )
+	{
 		return false;
 	}
 

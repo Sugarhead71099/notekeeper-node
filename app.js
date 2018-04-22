@@ -50,11 +50,13 @@ function list()
 	console.log('Listing all notes');
 	let allNotes = notes.getAll();
 
-	if ( allNotes.length ) {
+	if ( allNotes.length )
+	{
 		console.log(`Printing ${allNotes.length} note(s)`);
 
 		allNotes.forEach( note => notes.logNote(note) );
-	} else {
+	} else
+	{
 		console.log('There were no notes found');
 	}
 }
@@ -65,10 +67,12 @@ function read()
 
 	let note = notes.getNote(argv.title);
 
-	if ( note ) {
+	if ( note )
+	{
 		console.log('Note Successfully Retrieved');
 		notes.logNote(note);
-	} else {
+	} else
+	{
 		console.log('Note not read - Note not found');
 	}
 }
